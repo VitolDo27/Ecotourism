@@ -21,11 +21,38 @@
 			height: 100%;
 			touch-action: none;
 		}
-
 		.tools {
 			padding-top: 50px;
 			padding-left: 20px;
 			position: absolute;
+		}
+		#infoContainer {
+			position: absolute;
+			width: 30%;
+			height: 80%;
+			background-color: rgba(0,0,0,0.5);
+			top: 10%;
+			left: 0%;
+			z-index:999;
+		}
+		.infoLabel {
+			width: 100%;
+			height: 10%;
+			display: -webkit-box;
+			display: -moz-box;
+			display: block;
+			-webkit-box-orient: horizontal;
+			-moz-box-orient: horizontal;
+			-webkit-box-pack: start;
+			-moz-box-pack: start;
+			-webkit-box-align: start;
+			-moz-box-align: center;
+			color: #ffffff;
+			text-align: center;
+			font-family: Arial;
+			font-size: 24px;
+			line-height: 28px;
+			cursor: pointer;
 		}
 	</style>
 </head>
@@ -33,15 +60,25 @@
 	<div id="osmPanel" style="left:250px;position:absolute;background:border-box;background-color:white;width:250px;border:dashed;border-color:black;z-index:999">
 		<div id="drawContainer"></div>
 	</div>
+	<div id="infoContainer" style="display:none;">
+		<div id="nameInfoLabel" class="infoLabel">
+			Name
+		</div>
+		<div id="descriptionInfoLabel" class="infoLabel" style="height:80%">
+			Description
+		</div>
+		<div id="scoreInfoLabel" class="infoLabel">
+			4/5
+		</div>
+	</div>
 	<div id="demoMap" style="height:100%"></div>
 
-	<div id="edit_dialog" title="" style="display:none;">
-	</div>
 
-	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="js/OpenLayers.js"></script>
 	<script src="js/osmPlugin.js"></script>
 	<script src="js/osmPluginTools.js"></script>
+	<script src="js/displayPanel.js"></script>
 	<script>
 
 
@@ -49,7 +86,13 @@
 		osmPlugin.init();
 		osmPluginTools.onPointCreated.add(function (e) {
 			console.log('[PointCreated]: lon: ' + e.lon + ', lat: ' + e.lat);
-			console.log('[PointCreated]: x: ' + e.x + ', y: ' + e.y);
+		});
+		
+		$.getJSON('testConfig.json', function (data) {
+			let points = data.points;
+			for (let i = 0; i < points.length; i++) {
+				osmPlugin.addPoint(points[i].lon, points[i].lat, null, points[i]);
+			}
 		});
 		
 	</script>

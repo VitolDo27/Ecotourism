@@ -19,7 +19,8 @@ osmPluginTools.init = function () {
 	pointer.geometry.bounds.right = 20000000;
 	pointer.geometry.bounds.top = 20000000;
 	pointer.geometry.bounds.bottom = -20000000;
-	console.log(pointer);
+	pointer.geometry.x = NaN;
+	osmPlugin.drawControls.select.activate();
 	let modes = {
 		point: {
 			length: 1
@@ -73,6 +74,10 @@ osmPluginTools.init = function () {
 		if (!mode) {
 			pointer.geometry.x = NaN;
 			pointerLayer.redraw();
+			osmPlugin.drawControls.select.activate();
+		}
+		else {
+			osmPlugin.drawControls.select.deactivate();
 		}
 	}
 	map.events.register("mousemove", map, function (e) {
@@ -102,9 +107,7 @@ osmPluginTools.init = function () {
 		osmPlugin.addPoint(position.x, position.y, layer);
 		osmPluginTools.onPointCreated({
 			lon: position.x,
-			lat: position.y,
-			x: (position.x - osmPlugin.center.lon) / osmPlugin.coordFactor,
-			y: (position.y - osmPlugin.center.lat) / osmPlugin.coordFactor
+			lat: position.y
 		});
 		//console.log('[PointCreated]: lon: ' + position.x + ', lat: ' + position.y);
 		//console.log('[PointCreated]: x: ' + (position.x - osmPlugin.center.lon) / osmPlugin.coordFactor + ', y: ' + (position.y - osmPlugin.center.lat) / osmPlugin.coordFactor);

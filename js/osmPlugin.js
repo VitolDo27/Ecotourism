@@ -30,11 +30,11 @@ osmPlugin.init = function () {
 	//markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(0, 0), icon));
 
 	// Vector
-	function addPoint(x, y, optionalLayer, markerId) {
+	function addPoint(x, y, optionalLayer, info) {
 		var feature = new OpenLayers.Feature.Vector(
 			new OpenLayers.Geometry.Point(x, y)
 		);
-		feature.markerId = markerId;
+		feature.info = info;
 		if (optionalLayer)
 			optionalLayer.addFeatures(feature);
 		else
@@ -72,17 +72,17 @@ osmPlugin.init = function () {
 			{
 				clickout: false, toggle: false,
 				multiple: false, hover: false,
-				toggleKey: "ctrlKey", // ctrl key removes from selection
-				multipleKey: "shiftKey", // shift key adds to selection
-				box: true
+				//toggleKey: "ctrlKey", // ctrl key removes from selection
+				//multipleKey: "shiftKey", // shift key adds to selection
+				box: false
 			}
 		),
 		selecthover: new OpenLayers.Control.SelectFeature(
 			vectorLayer,
 			{
 				multiple: false, hover: true,
-				toggleKey: "ctrlKey", // ctrl key removes from selection
-				multipleKey: "shiftKey" // shift key adds to selection
+				//toggleKey: "ctrlKey", // ctrl key removes from selection
+				//multipleKey: "shiftKey" // shift key adds to selection
 			}
 		)
 	};
@@ -94,19 +94,19 @@ osmPlugin.init = function () {
 
 	osmPlugin.selectMode = false;
 
-	window.onkeydown = function (e) {
-		if (e.key === 'Control') {
-			drawControls.select.activate();
-			osmPlugin.selectMode = true;
-		}
-	};
+	//window.onkeydown = function (e) {
+	//	if (e.key === 'Control') {
+	//		drawControls.select.activate();
+	//		osmPlugin.selectMode = true;
+	//	}
+	//};
 
-	window.onkeyup = function (e) {
-		if (e.key === 'Control') {
-			drawControls.select.deactivate();
-			osmPlugin.selectMode = false;
-		}
-	};
+	//window.onkeyup = function (e) {
+	//	if (e.key === 'Control') {
+	//		drawControls.select.deactivate();
+	//		osmPlugin.selectMode = false;
+	//	}
+	//};
 	let mousePositionControl = new OpenLayers.Control.MousePosition({
 		prefix: '',
 		separator: '|',
@@ -130,9 +130,10 @@ osmPlugin.init = function () {
 	osmPlugin.getMousePosition = getMousePosition;
 
 	osmPlugin.onInit();
+	
 
 	osmPlugin.drawControls.select.onSelect = function (object) {
-		if (object.markerId !== undefined) {
+		if (object.info !== undefined) {
 			//for (let i = 0; i < markers.markers.length; i++) {
 			//	let marker = markers.markers[i];
 			//	if (marker.markerId === object.markerId) {
@@ -141,6 +142,8 @@ osmPlugin.init = function () {
 			//	}
 			//}
 			console.log('[NodeSelected]: id: ' + object.markerId + ', lon: ' + object.geometry.x + ', lat: ' + object.geometry.y);
+
+			displayPanel.displayMarkerInfo(object.info);
 		}
 	};
 
