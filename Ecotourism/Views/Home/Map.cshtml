@@ -1,0 +1,46 @@
+﻿
+<div id="osmPanel" style="left:250px;position:absolute;background:border-box;background-color:white;width:250px;border:dashed;border-color:black;z-index:999">
+	<div id="drawContainer"></div>
+</div>
+<div id="infoContainer" style="display:none;">
+	<div id="nameInfoLabel" class="infoLabel">
+		Name
+	</div>
+	<div id="descriptionInfoLabel" class="infoLabel" style="height:80%">
+		Description
+	</div>
+	<div id="scoreInfoLabel" class="infoLabel">
+		4/5
+	</div>
+</div>
+<div id="demoMap" style="height:100%"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="~/Scripts/map/OpenLayers.js"></script>
+<script src="~/Scripts/map/osmPlugin.js"></script>
+<script src="~/Scripts/map/osmPluginTools.js"></script>
+<script src="~/Scripts/map/displayPanel.js"></script>
+<script>
+
+
+
+		osmPlugin.init();
+		osmPluginTools.onPointCreated.add(function (e) {
+			console.log('[PointCreated]: lon: ' + e.lon + ', lat: ' + e.lat);
+		});
+
+		//$.getJSON('testConfig.json', function (data) {
+		//	let points = data.points;
+		//	for (let i = 0; i < points.length; i++) {
+		//		osmPlugin.addPoint(points[i].lon, points[i].lat, null, points[i]);
+		//	}
+		//});
+		$.getJSON('/Content/json/testConfig2.json', function (data) {
+			let points = data.features;
+			for (let i = 0; i < points.length; i++) {
+				osmPlugin.addPoint(points[i].geometry.coordinates[0] * 100000, points[i].geometry.coordinates[1] * 100000, null, points[i]);
+			}
+		});
+
+</script>
