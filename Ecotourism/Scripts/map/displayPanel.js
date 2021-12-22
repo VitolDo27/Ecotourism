@@ -15,7 +15,7 @@ displayPanel.displayMarkerInfo = function (info) {
 	//displayPanel.scoreLabel.innerText = info.score;
 
 	displayPanel.nameLabel.innerText = info.properties.NAME_RU;
-	displayPanel.descriptionLabel.innerText = info.properties.NAME_EN;
+	displayPanel.descriptionLabel.innerText = info.properties.NAME_P_RU;
 	displayPanel.scoreLabel.innerText = info.properties.ID;
 }
 displayPanel.hide = function () {

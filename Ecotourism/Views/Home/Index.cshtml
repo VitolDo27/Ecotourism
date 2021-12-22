@@ -52,13 +52,33 @@
 					
 					$.getJSON('/Content/json/testConfig2.json', function (data) {
 						let points = data.features;
+						let groupedPoints = [];
 						var source = new proj4.Proj('EPSG:4326');
 						var dest = new proj4.Proj('EPSG:3785');
 						for (let i = 0; i < points.length; i++) {
-							let p = proj4.toPoint(points[i].geometry.coordinates);
+							let grouped = false;
+							for (let j = 0; j < groupedPoints.length; j++) {
+								if (points[i].properties.NAME_EN === groupedPoints[j][0].properties.NAME_EN) {
+									groupedPoints[j].push(points[i]);
+									grouped = true;
+									break;
+								}
+							}
+							if (!grouped)
+								groupedPoints.push([points[i]]);
+						}
+						for (let i = 0; i < groupedPoints.length; i++) {
+							let coordinates = [0, 0];
+							for (let j = 0; j < groupedPoints[i].length; j++) {
+								coordinates[0] += groupedPoints[i][j].geometry.coordinates[0];
+								coordinates[1] += groupedPoints[i][j].geometry.coordinates[1];
+							}
+							coordinates[0] /= groupedPoints[i].length;
+							coordinates[1] /= groupedPoints[i].length;
+							let p = proj4.toPoint(coordinates);
 							//console.log(p);
 							p = proj4.transform(source, dest, p);
-							osmPlugin.addPoint(p.x, p.y, null, points[i]);
+							osmPlugin.addPoint(p.x, p.y, null, groupedPoints[i][0]);
 						}
 					});
 
