@@ -23,8 +23,8 @@ osmPlugin.init = function () {
 	osmPlugin.markers = markers;
 
 
-	document.getElementById('OpenLayers_Map_2_OpenLayers_ViewPort').style.pointerEvents = 'none';
-	document.getElementById('OpenLayers_Control_Zoom_5').style.pointerEvents = 'all';
+	//document.getElementById('OpenLayers_Map_2_OpenLayers_ViewPort').style.pointerEvents = 'none';
+	//document.getElementById('OpenLayers_Control_Zoom_5').style.pointerEvents = 'all';
 	document.getElementById('OpenLayers_Map_2_OpenLayers_ViewPort').appendChild(document.getElementById('infoContainer'));
 	
 
