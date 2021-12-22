@@ -7,6 +7,7 @@
 };
 
 displayPanel.displayMarkerInfo = function (info) {
+	console.log(info);
 	displayPanel.infoContainer.style.display = 'block';
 
 	//displayPanel.nameLabel.innerText = info.name;

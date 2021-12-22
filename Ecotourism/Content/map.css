@@ -1,0 +1,29 @@
+﻿#infoContainer {
+	position: relative;
+	width: 30%;
+	height: 80%;
+	background-color: rgba(0,0,0,0.5);
+	top: 10%;
+	left: 0%;
+	z-index: 999;
+}
+
+.infoLabel {
+	width: 100%;
+	height: 10%;
+	display: -webkit-box;
+	display: -moz-box;
+	display: block;
+	-webkit-box-orient: horizontal;
+	-moz-box-orient: horizontal;
+	-webkit-box-pack: start;
+	-moz-box-pack: start;
+	-webkit-box-align: start;
+	-moz-box-align: center;
+	color: #ffffff;
+	text-align: center;
+	font-family: Arial;
+	font-size: 24px;
+	line-height: 28px;
+	cursor: pointer;
+}

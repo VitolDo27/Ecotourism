@@ -41,6 +41,11 @@ namespace Ecotourism
             bundles.Add(new StyleBundle("~/Content/css").Include(
                  "~/Content/bootstrap.css",
                  "~/Content/Site.css"));
+            bundles.Add(new StyleBundle("~/Content/lending").Include(
+                 "~/Content/normalize.css",
+                 "~/Content/style.css"));
+            bundles.Add(new StyleBundle("~/Content/map").Include(
+                 "~/Content/map.css"));
         }
     }
 }

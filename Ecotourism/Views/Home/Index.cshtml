@@ -1,7 +1,141 @@
-﻿@section SPAViews {
-    @Html.Partial("_Home")
+﻿@{
+	@Styles.Render("~/Content/lending");
+	@Styles.Render("~/Content/map");
 }
-@section Scripts{
-    @Scripts.Render("~/bundles/knockout")
-    @Scripts.Render("~/bundles/app")
-}
+<script>if (window.href !== '') window.href = '';</script>
+<header class="header">
+	<div class="container header-nav-container">
+		<button class="button nav-button" onclick="window.location.href = '#regions';">Регионы</button>
+		<button class="button nav-button" onclick="window.location.href = 'rating';">Рейтинг</button>
+		<button class="button nav-button" onclick="window.location.href = '#about';">О проекте</button>
+	</div>
+	<div class="container intro-container">
+		<h1 class="intro-h">Экотуризм<br>в России</h1>
+		<button class="button intro-button">Подробнее</button>
+	</div>
+</header>
+<main class="main">
+	<div class="container">
+		<section class="map">
+			<div id="map" class="container map-container">
+				<div id="osmPanel" style="display:none;left:250px;position:absolute;background:border-box;background-color:white;width:250px;border:dashed;border-color:black;z-index:999">
+					<div id="drawContainer"></div>
+				</div>
+				<div id="infoContainer" style="display:none;">
+					<div id="nameInfoLabel" class="infoLabel">
+						Name
+					</div>
+					<div id="descriptionInfoLabel" class="infoLabel" style="height:80%">
+						Description
+					</div>
+					<div id="scoreInfoLabel" class="infoLabel">
+						4/5
+					</div>
+				</div>
+				<div id="demoMap" style="height:100%"></div>
+
+
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+				<script src="~/Scripts/map/OpenLayers.js"></script>
+				<script src="~/Scripts/map/proj4.js"></script>
+				<script src="~/Scripts/map/osmPlugin.js"></script>
+				<script src="~/Scripts/map/osmPluginTools.js"></script>
+				<script src="~/Scripts/map/displayPanel.js"></script>
+				<script>
+
+
+
+					osmPlugin.init();
+					osmPluginTools.onPointCreated.add(function (e) {
+						console.log('[PointCreated]: lon: ' + e.lon + ', lat: ' + e.lat);
+					});
+					
+					$.getJSON('/Content/json/testConfig2.json', function (data) {
+						let points = data.features;
+						var source = new proj4.Proj('EPSG:4326');
+						var dest = new proj4.Proj('EPSG:3785');
+						for (let i = 0; i < points.length; i++) {
+							let p = proj4.toPoint(points[i].geometry.coordinates);
+							//console.log(p);
+							p = proj4.transform(source, dest, p);
+							osmPlugin.addPoint(p.x, p.y, null, points[i]);
+						}
+					});
+
+				</script>
+			</div>
+		</section>
+		<section id="regions" class="regions">
+			<div class="container regions-container">
+				<img src="~/Content/img/Dalny.jpg" class="regions-img">
+				<div class="regions-container-description">
+					<h3 class="regions-container-h">Дальневосточный регион</h3>
+					<p class="regions-container-text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+					@Html.ActionLink("Подробнее", "dalny", "Home", new { area = "" }, new { @class = "button regions-button" })
+				</div>
+			</div>
+			<div class="container regions-container">
+				<img src="/Content/img/Sibir.jpg" class="regions-img">
+				<div class="regions-container-description">
+					<h3 class="regions-container-h">Сибирский регион</h3>
+					<p class="regions-container-text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+					@Html.ActionLink("Подробнее", "sibir", "Home", new { area = "" }, new { @class = "button regions-button" })
+				</div>
+			</div>
+			<div class="container regions-container">
+				<img src="~/Content/img/Ural.jpg" class="regions-img">
+				<div class="regions-container-description">
+					<h3 class="regions-container-h">Уральский регион</h3>
+					<p class="regions-container-text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+					@Html.ActionLink("Подробнее", "ural", "Home", new { area = "" }, new { @class = "button regions-button" })
+				</div>
+			</div>
+			<div class="container regions-container">
+				<img src="~/Content/img/Zapad.jpg" class="regions-img">
+				<div class="regions-container-description">
+					<h3 class="regions-container-h">Северо-Западный регион</h3>
+					<p class="regions-container-text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+					@Html.ActionLink("Подробнее", "zapad", "Home", new { area = "" }, new { @class = "button regions-button" })
+				</div>
+			</div>
+			<div class="container regions-container">
+				<img src="~/Content/img/Privolzh.jpg" class="regions-img">
+				<div class="regions-container-description">
+					<h3 class="regions-container-h">Приволжский регион</h3>
+					<p class="regions-container-text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+					@Html.ActionLink("Подробнее", "privolzh", "Home", new { area = "" }, new { @class = "button regions-button" })
+				</div>
+			</div>
+			<div class="container regions-container">
+				<img src="~/Content/img/Center.jpg" class="regions-img">
+				<div class="regions-container-description">
+					<h3 class="regions-container-h">Центральный регион</h3>
+					<p class="regions-container-text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+					@Html.ActionLink("Подробнее", "center", "Home", new { area = "" }, new { @class = "button regions-button" })
+				</div>
+			</div>
+			<div class="container regions-container">
+				<img src="~/Content/img/Ug.jpg" class="regions-img">
+				<div class="regions-container-description">
+					<h3 class="regions-container-h">Южный регион</h3>
+					<p class="regions-container-text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+					@Html.ActionLink("Подробнее", "ug", "Home", new { area = "" }, new { @class = "button regions-button" })
+				</div>
+			</div>
+			<div class="container regions-container">
+				<img src="~/Content/img/Kavkaz.jpg" class="regions-img">
+				<div class="regions-container-description">
+					<h3 class="regions-container-h">Северо-Кавказский регион</h3>
+					<p class="regions-container-text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+					@Html.ActionLink("Подробнее", "kavkaz", "Home", new { area = "" }, new { @class = "button regions-button" })
+				</div>
+			</div>
+		</section>
+		<section id="about" class="about">
+			<div class="container about-container">
+				<h2 class="about-h">Экотуризм в России</h2>
+				<p class="about-text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+			</div>
+		</section>
+	</div>
+</main>

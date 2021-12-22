@@ -10,10 +10,10 @@ osmPlugin.init = function () {
 	map.addLayer(new OpenLayers.Layer.OSM());
 	osmPlugin.map = map;
 	//map.zoomToMaxExtent();
-	osmPlugin.center = new OpenLayers.LonLat(8168151.4444175, 7360237.2577181);
+	osmPlugin.center = new OpenLayers.LonLat(9568151.4444175, 9360237.2577181);//new OpenLayers.LonLat(8168151.4444175, 7360237.2577181);
 	osmPlugin.center = osmPlugin.center;
 
-	var zoom = 13;
+	var zoom = 3;
 	map.setCenter(osmPlugin.center, zoom);
 
 	var markers = new OpenLayers.Layer.Markers("Markers");
@@ -21,6 +21,11 @@ osmPlugin.init = function () {
 	var vectorLayer = new OpenLayers.Layer.Vector("Overlay");
 	map.addLayer(vectorLayer);
 	osmPlugin.markers = markers;
+
+
+	document.getElementById('OpenLayers_Map_2_OpenLayers_ViewPort').style.pointerEvents = 'none';
+	document.getElementById('OpenLayers_Control_Zoom_5').style.pointerEvents = 'all';
+	document.getElementById('OpenLayers_Map_2_OpenLayers_ViewPort').appendChild(document.getElementById('infoContainer'));
 	
 
 	// Markers

@@ -16,5 +16,45 @@ namespace Ecotourism.Controllers
         {
             return View();
         }
+        public ActionResult Center()
+        {
+            return View();
+        }
+        public ActionResult Dalny()
+        {
+            return View();
+        }
+        public ActionResult Kavkaz()
+        {
+            return View();
+        }
+        public ActionResult Point()
+        {
+            return View();
+        }
+        public ActionResult Privolzh()
+        {
+            return View();
+        }
+        public ActionResult Rating()
+        {
+            return View();
+        }
+        public ActionResult Sibir()
+        {
+            return View();
+        }
+        public ActionResult Ural()
+        {
+            return View();
+        }
+        public ActionResult Ug()
+        {
+            return View();
+        }
+        public ActionResult Zapad()
+        {
+            return View();
+        }
     }
 }
