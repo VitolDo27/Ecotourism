@@ -123,6 +123,7 @@
     </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -245,6 +246,28 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GeoGeoPointContext.cs" />
+    <Compile Include="Models\GeoPoint.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeoPoint.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeoPoint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeoPoint.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeoPoint.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeoPoint.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeoPointOld.cs" />
+    <Compile Include="Models\GeoGeoPoints.cs" />
+    <Compile Include="Models\GeoGeoPointViewModel.cs" />
+    <Compile Include="Models\GeoPoints.cs">
+      <DependentUpon>GeoPoint.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MeViewModels.cs" />
@@ -265,14 +288,17 @@
     <Content Include="Content\img\intro.png" />
     <Content Include="Content\img\kavkaz-rating.jpg" />
     <Content Include="Content\img\Kavkaz.jpg" />
+    <Content Include="Content\img\northkavkaz.png" />
     <Content Include="Content\img\privolzh-rating.jpg" />
     <Content Include="Content\img\Privolzh.jpg" />
     <Content Include="Content\img\sibir-rating.jpg" />
     <Content Include="Content\img\Sibir.jpg" />
+    <Content Include="Content\img\sibir.png" />
     <Content Include="Content\img\ug-rating.jpg" />
     <Content Include="Content\img\Ug.jpg" />
     <Content Include="Content\img\ural-rating.jpg" />
     <Content Include="Content\img\Ural.jpg" />
+    <Content Include="Content\img\ural.png" />
     <Content Include="Content\img\zapad-rating.jpg" />
     <Content Include="Content\img\Zapad.jpg" />
     <Content Include="Content\normalize.css" />
@@ -282,6 +308,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\GeoPoint.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GeoPoint.edmx</DependentUpon>
+      <LastGenOutput>GeoPoint.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GeoPoint.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GeoPoint.edmx</DependentUpon>
+      <LastGenOutput>GeoPoint.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\app\_run.js" />
     <Content Include="Scripts\app\app.datamodel.js" />
     <Content Include="Scripts\app\app.viewmodel.js" />
@@ -331,6 +367,13 @@
     <Content Include="Content\fonts\Exo2-SemiBoldItalic.ttf" />
     <Content Include="Content\fonts\Exo2-Thin.ttf" />
     <Content Include="Content\fonts\Exo2-ThinItalic.ttf" />
+    <EntityDeploy Include="Models\GeoPoint.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GeoPoint.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\GeoPoint.edmx.diagram">
+      <DependentUpon>GeoPoint.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -439,6 +482,13 @@
     <Content Include="Views\Home\Point.cshtml" />
     <Content Include="Views\Home\Privolzh.cshtml" />
     <Content Include="Views\Home\Rating.cshtml" />
+    <Content Include="Views\Home\PointNorthKavkaz.cshtml" />
+    <Content Include="Views\Home\PointSibir.cshtml" />
+    <Content Include="Views\Home\PointUral.cshtml" />
+    <Content Include="Views\Home\AddPoints.cshtml" />
+    <Content Include="Views\Home\AddPoint.cshtml" />
+    <Content Include="Views\Home\ViewPoints.cshtml" />
+    <Content Include="Views\Home\ViewPoint.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -455,6 +505,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
