@@ -289,6 +289,48 @@
     <Content Include="Content\img\kavkaz-rating.jpg" />
     <Content Include="Content\img\Kavkaz.jpg" />
     <Content Include="Content\img\northkavkaz.png" />
+    <Content Include="Content\img\points\Alania.jpg" />
+    <Content Include="Content\img\points\Alkhanay.png" />
+    <Content Include="Content\img\points\Anyuisky.jpg" />
+    <Content Include="Content\img\points\Bashkiria.jpg" />
+    <Content Include="Content\img\points\Buzulukskiy bor.jpg" />
+    <Content Include="Content\img\points\Chavash Varmane.png" />
+    <Content Include="Content\img\points\Kalevalsky.jpg" />
+    <Content Include="Content\img\points\Kenozersky.png" />
+    <Content Include="Content\img\points\Khvalynsky.jpg" />
+    <Content Include="Content\img\points\Kurshskaya Kosa.jpg" />
+    <Content Include="Content\img\points\Losiny Ostrov.jpg" />
+    <Content Include="Content\img\points\Mary-Chodra.jpg" />
+    <Content Include="Content\img\points\Meschera.png" />
+    <Content Include="Content\img\points\Nechkinsky.png" />
+    <Content Include="Content\img\points\Nizhnyaya Kama.png" />
+    <Content Include="Content\img\points\Orlovskoye Polesie.png" />
+    <Content Include="Content\img\points\Paanayarvi.jpg" />
+    <Content Include="Content\img\points\Plescheevo Ozero.png" />
+    <Content Include="Content\img\points\Pribaikalsky.jpg" />
+    <Content Include="Content\img\points\Prielbrusie.png" />
+    <Content Include="Content\img\points\Pripyshmenskiye Bory.png" />
+    <Content Include="Content\img\points\Russkaya Arctica.jpg" />
+    <Content Include="Content\img\points\Russky Sever.png" />
+    <Content Include="Content\img\points\Sailyugemskiy.jpg" />
+    <Content Include="Content\img\points\Samarskaya Luka.jpg" />
+    <Content Include="Content\img\points\Sebezhsky.png" />
+    <Content Include="Content\img\points\Shorsky.png" />
+    <Content Include="Content\img\points\Shushensky Bor.jpg" />
+    <Content Include="Content\img\points\Smolenskoye Poozerie.png" />
+    <Content Include="Content\img\points\Smolny.png" />
+    <Content Include="Content\img\points\Sochinsky.jpg" />
+    <Content Include="Content\img\points\Taganay.png" />
+    <Content Include="Content\img\points\Tunkinsky.png" />
+    <Content Include="Content\img\points\Udege Legend.jpg" />
+    <Content Include="Content\img\points\Ugra.jpg" />
+    <Content Include="Content\img\points\Valdaysky.png" />
+    <Content Include="Content\img\points\Vodlozersky.jpg" />
+    <Content Include="Content\img\points\Yugyd-Va.jpg" />
+    <Content Include="Content\img\points\Zabaikalsky.jpg" />
+    <Content Include="Content\img\points\Zavidovo.jpg" />
+    <Content Include="Content\img\points\Zov Tigra.jpg" />
+    <Content Include="Content\img\points\Zuratkul.png" />
     <Content Include="Content\img\privolzh-rating.jpg" />
     <Content Include="Content\img\Privolzh.jpg" />
     <Content Include="Content\img\sibir-rating.jpg" />
@@ -348,7 +390,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\json\testConfig.json" />
-    <Content Include="Content\json\testConfig2.json" />
+    <Content Include="Content\json\testConfig4.json" />
     <Content Include="Content\fonts\Exo2-Black.ttf" />
     <Content Include="Content\fonts\Exo2-BlackItalic.ttf" />
     <Content Include="Content\fonts\Exo2-Bold.ttf" />
@@ -374,6 +416,7 @@
     <Content Include="Models\GeoPoint.edmx.diagram">
       <DependentUpon>GeoPoint.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\json\testConfig2.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

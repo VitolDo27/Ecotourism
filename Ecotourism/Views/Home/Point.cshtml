@@ -1,14 +1,15 @@
-﻿@{
+﻿@model Ecotourism.Models.GeoPoints
+@{
 	@Styles.Render("~/Content/lending")
 }
 <div class="container">
 	<section class="point">
 		<div class="container point-container">
 			<div class="point-description">
-				<h2 class="point-h">Какие-то горы</h2>
-				<p class="point-text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+				<h2 class="point-h">@Model.Name</h2>
+				<p class="point-text">@Model.Description</p>
 			</div>
-			<img class="point-img" src="~/Content/img/kavkaz-rating.jpg">
+			<img class="point-img" src="~/Content/img/points/@Model.ImagePath">
 		</div>
 	</section>
 </div>
@@ -16,15 +17,15 @@
 	<section class="rating">
 		<div class="container rating-container">
 			<ul class="raiting-list">
-				<li class="raiting-item" onclick="window.location.href = 'point';"><img class="rating-img" src="~/Content/img/center-rating.jpg"></li>
-				<li class="raiting-item" onclick="window.location.href = 'point';"><img class="rating-img" src="~/Content/img/ural-rating.jpg"></li>
-				<li class="raiting-item" onclick="window.location.href = 'point';"><img class="rating-img" src="~/Content/img/zapad-rating.jpg"></li>
-				<li class="raiting-item" onclick="window.location.href = 'point';"><img class="rating-img" src="~/Content/img/dalny-rating.jpg"></li>
-				<li class="raiting-item" onclick="window.location.href = 'point';"><img class="rating-img" src="~/Content/img/kavkaz-rating.jpg"></li>
-				<li class="raiting-item" onclick="window.location.href = 'point';"><img class="rating-img" src="~/Content/img/privolzh-rating.jpg"></li>
-				<li class="raiting-item" onclick="window.location.href = 'point';"><img class="rating-img" src="~/Content/img/sibir-rating.jpg"></li>
-				<li class="raiting-item" onclick="window.location.href = 'point';"><img class="rating-img" src="~/Content/img/center-rating.jpg"></li>
-				<li class="raiting-item" onclick="window.location.href = 'point';"><img class="rating-img" src="~/Content/img/ug-rating.jpg"></li>
+				<li class="raiting-item" onclick="window.location.href = '/Home/point/' + parseInt(Math.random() * 40);"><img class="rating-img" src="~/Content/img/center-rating.jpg"></li>
+				<li class="raiting-item" onclick="window.location.href = '/Home/point/' + parseInt(Math.random() * 40);"><img class="rating-img" src="~/Content/img/ural-rating.jpg"></li>
+				<li class="raiting-item" onclick="window.location.href = '/Home/point/' + parseInt(Math.random() * 40);"><img class="rating-img" src="~/Content/img/zapad-rating.jpg"></li>
+				<li class="raiting-item" onclick="window.location.href = '/Home/point/' + parseInt(Math.random() * 40);"><img class="rating-img" src="~/Content/img/dalny-rating.jpg"></li>
+				<li class="raiting-item" onclick="window.location.href = '/Home/point/' + parseInt(Math.random() * 40);"><img class="rating-img" src="~/Content/img/kavkaz-rating.jpg"></li>
+				<li class="raiting-item" onclick="window.location.href = '/Home/point/' + parseInt(Math.random() * 40);"><img class="rating-img" src="~/Content/img/privolzh-rating.jpg"></li>
+				<li class="raiting-item" onclick="window.location.href = '/Home/point/' + parseInt(Math.random() * 40);"><img class="rating-img" src="~/Content/img/sibir-rating.jpg"></li>
+				<li class="raiting-item" onclick="window.location.href = '/Home/point/' + parseInt(Math.random() * 40);"><img class="rating-img" src="~/Content/img/center-rating.jpg"></li>
+				<li class="raiting-item" onclick="window.location.href = '/Home/point/' + parseInt(Math.random() * 40);"><img class="rating-img" src="~/Content/img/ug-rating.jpg"></li>
 			</ul>
 		</div>
 	</section>

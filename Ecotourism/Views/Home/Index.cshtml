@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Ecotourism.Models.GeoPoints>
+@{
 	@Styles.Render("~/Content/lending");
 	@Styles.Render("~/Content/map");
 }
@@ -21,16 +22,15 @@
 				<div id="osmPanel" style="display:none;left:250px;position:absolute;background:border-box;background-color:white;width:250px;border:dashed;border-color:black;z-index:999">
 					<div id="drawContainer"></div>
 				</div>
-				<div id="infoContainer" style="display:none;">
+				<div id="infoContainer" style="display:none;justify-content: center;flex-direction: column;align-items: center;padding: 20px;">
 					<div id="nameInfoLabel" class="infoLabel">
 						Name
 					</div>
-					<div id="descriptionInfoLabel" class="infoLabel" style="height:80%">
+					<div id="descriptionInfoLabel" class="infoLabel" style="height:80%;text-align: start;font-size: medium;max-width: fit-content;">
 						Description
 					</div>
-					<div id="scoreInfoLabel" class="infoLabel">
-						4/5
-					</div>
+					@*@Html.ActionLink("Подробнее", "point", "Home", new { area = "", id=2 }, new { @class = "button regions-button" })*@
+					<a id="openSelectedPoint" class="button regions-button" href="/Home/point/0">Подробнее</a>
 				</div>
 				<div id="demoMap" style="height:100%"></div>
 
@@ -43,44 +43,72 @@
 				<script src="~/Scripts/map/displayPanel.js"></script>
 				<script>
 
-
+					// scroll fix
+					document.getElementById("demoMap").addEventListener('wheel', function (e) {
+						e.preventDefault();
+					}, { passive: false });
 
 					osmPlugin.init();
 					osmPluginTools.onPointCreated.add(function (e) {
 						console.log('[PointCreated]: lon: ' + e.lon + ', lat: ' + e.lat);
 					});
-					
-					$.getJSON('/Content/json/testConfig2.json', function (data) {
-						let points = data.features;
-						let groupedPoints = [];
-						var source = new proj4.Proj('EPSG:4326');
-						var dest = new proj4.Proj('EPSG:3785');
-						for (let i = 0; i < points.length; i++) {
-							let grouped = false;
-							for (let j = 0; j < groupedPoints.length; j++) {
-								if (points[i].properties.NAME_EN === groupedPoints[j][0].properties.NAME_EN) {
-									groupedPoints[j].push(points[i]);
-									grouped = true;
-									break;
-								}
+
+					//$.getJSON('/Content/json/testConfig2.json', function (data) {
+					//	let points = data.features;
+					//	let groupedPoints = [];
+					//	var source = new proj4.Proj('EPSG:4326');
+					//	var dest = new proj4.Proj('EPSG:3785');
+					//	for (let i = 0; i < points.length; i++) {
+					//		let grouped = false;
+					//		for (let j = 0; j < groupedPoints.length; j++) {
+					//			if (points[i].properties.NAME_EN === groupedPoints[j][0].properties.NAME_EN) {
+					//				groupedPoints[j].push(points[i]);
+					//				grouped = true;
+					//				break;
+					//			}
+					//		}
+					//		if (!grouped)
+					//			groupedPoints.push([points[i]]);
+					//	}
+					//	for (let i = 0; i < groupedPoints.length; i++) {
+					//		let coordinates = [0, 0];
+					//		for (let j = 0; j < groupedPoints[i].length; j++) {
+					//			coordinates[0] += groupedPoints[i][j].geometry.coordinates[0];
+					//			coordinates[1] += groupedPoints[i][j].geometry.coordinates[1];
+					//		}
+					//		coordinates[0] /= groupedPoints[i].length;
+					//		coordinates[1] /= groupedPoints[i].length;
+					//		let imPath = groupedPoints[i][0].properties.NAME_EN.endsWith('.jpg') ? groupedPoints[i][0].properties.NAME_EN : (groupedPoints[i][0].properties.NAME_EN + '.png');
+					//		//'INSERT INTO [dbo].[GeoPoints] ([Id], [Lon], [Lat], [Name], [Description], [ImagePath]) VALUES (1, 42.59813, 43.34302, N'Приэльбрусье', N'Описание', N'Prielbrusie.png')'
+					//		//let strToAdd = "INSERT INTO [dbo].[GeoPoints] ([Id], [Lon], [Lat], [Name], [Description], [ImagePath]) VALUES (" +
+					//		//	i + ", " + coordinates[0] + ", " + coordinates[1] + ", N'" +
+					//		//	groupedPoints[i][0].properties.NAME_RU + "', N'" + groupedPoints[i][0].properties.DESCRIPTION + "', N'" + imPath + "')\n";
+					//		//console.log(strToAdd);
+					//		//query += strToAdd;
+
+					//		let p = proj4.toPoint(coordinates);
+					//		//console.log(p);
+					//		p = proj4.transform(source, dest, p);
+					//		osmPlugin.addPoint(p.x, p.y, null, groupedPoints[i][0]);
+					//	}
+					//});
+
+					var source = new proj4.Proj('EPSG:4326');
+					var dest = new proj4.Proj('EPSG:3785');
+					let points = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+					for (var i = 0; i < points.length; i++) {
+						let p = proj4.toPoint([points[i].Lon, points[i].Lat]);
+						p = proj4.transform(source, dest, p);
+						osmPlugin.addPoint(p.x, p.y, null, {
+							properties: {
+								"NAME_RU": points[i].Name,
+								"NAME_EN": points[i].ImagePath,
+								"DESCRIPTION": points[i].Description,
+								"NAME_P_RU": null,
+								"ID": points[i].Id
 							}
-							if (!grouped)
-								groupedPoints.push([points[i]]);
-						}
-						for (let i = 0; i < groupedPoints.length; i++) {
-							let coordinates = [0, 0];
-							for (let j = 0; j < groupedPoints[i].length; j++) {
-								coordinates[0] += groupedPoints[i][j].geometry.coordinates[0];
-								coordinates[1] += groupedPoints[i][j].geometry.coordinates[1];
-							}
-							coordinates[0] /= groupedPoints[i].length;
-							coordinates[1] /= groupedPoints[i].length;
-							let p = proj4.toPoint(coordinates);
-							//console.log(p);
-							p = proj4.transform(source, dest, p);
-							osmPlugin.addPoint(p.x, p.y, null, groupedPoints[i][0]);
-						}
-					});
+						});
+					}
 
 				</script>
 			</div>

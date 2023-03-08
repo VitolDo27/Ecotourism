@@ -1,0 +1,751 @@
+﻿{
+	"type": "FeatureCollection",
+	"crs": {
+		"type": "name",
+		"properties": { "name": "urn:ogc:def:crs:EPSG::4284" }
+	},
+
+	"features": [
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Приэльбрусье",
+				"NAME_EN": "Prielbrusie",
+				"NAME_P_RU": null,
+				"ID": 2025
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 42.59813, 43.34302 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Шорский",
+				"NAME_EN": "Shorsky",
+				"NAME_P_RU": null,
+				"ID": 2041
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 88.52824, 52.66566 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Таганай",
+				"NAME_EN": "Taganay",
+				"NAME_P_RU": null,
+				"ID": 2035
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 59.84608, 55.33229 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Зюраткуль",
+				"NAME_EN": "Zuratkul",
+				"NAME_P_RU": null,
+				"ID": 2010
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 59.05582, 54.79437 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Чаваш вармане",
+				"NAME_EN": "Chavash Varmane",
+				"NAME_P_RU": null,
+				"ID": 2040
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 47.24615, 54.84586 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Припышминские боры",
+				"NAME_EN": "Pripyshmenskiye Bory",
+				"NAME_P_RU": "Тугулымская дача",
+				"ID": 2026
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 64.5038, 57.26261 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Припышминские боры",
+				"NAME_EN": "Pripyshmenskiye Bory",
+				"NAME_P_RU": "Талицкая дача",
+				"ID": 2026
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 63.88864, 56.96223 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Мещера",
+				"NAME_EN": "Meschera",
+				"NAME_P_RU": null,
+				"ID": 2016
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 40.29777, 55.55203 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Тункинский",
+				"NAME_EN": "Tunkinsky",
+				"NAME_P_RU": null,
+				"ID": 2036
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 102.41949, 51.5443 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Смоленское поозерье",
+				"NAME_EN": "Smolenskoye Poozerie",
+				"NAME_P_RU": null,
+				"ID": 2032
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 31.92557, 55.54215 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Валдайский",
+				"NAME_EN": "Valdaysky",
+				"NAME_P_RU": null,
+				"ID": 2005
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 33.15932, 57.88686 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Себежский",
+				"NAME_EN": "Sebezhsky",
+				"NAME_P_RU": null,
+				"ID": 2031
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 28.4472, 56.17478 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Смольный",
+				"NAME_EN": "Smolny",
+				"NAME_P_RU": "Участок № 1",
+				"ID": 2033
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 45.09355, 54.75534 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Смольный",
+				"NAME_EN": "Smolny",
+				"NAME_P_RU": "Участок № 2",
+				"ID": 2033
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 45.13062, 54.77511 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Смольный",
+				"NAME_EN": "Smolny",
+				"NAME_P_RU": "Участок № 4",
+				"ID": 2033
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 45.44188, 54.70857 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Смольный",
+				"NAME_EN": "Smolny",
+				"NAME_P_RU": "Участок № 3",
+				"ID": 2033
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 45.40455, 54.80876 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Нижняя Кама",
+				"NAME_EN": "Nizhnyaya Kama",
+				"NAME_P_RU": "Елабужский пойменный заказник. Участок Танайка",
+				"ID": 2019
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 51.88361, 55.7182 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Кенозерский",
+				"NAME_EN": "Kenozersky",
+				"NAME_P_RU": null,
+				"ID": 2012
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 38.14469, 61.94672 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Орловское полесье",
+				"NAME_EN": "Orlovskoye Polesie",
+				"NAME_P_RU": null,
+				"ID": 2020
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 35.41996, 53.29119 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Алханай",
+				"NAME_EN": "Alkhanay",
+				"NAME_P_RU": null,
+				"ID": 2001
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 113.22869, 50.89716 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Русский север",
+				"NAME_EN": "Russky Sever",
+				"NAME_P_RU": null,
+				"ID": 2028
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 38.56201, 60.01104 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Плещеево озеро",
+				"NAME_EN": "Plescheevo Ozero",
+				"NAME_P_RU": null,
+				"ID": 2022
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 38.73168, 56.76412 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Алания",
+				"NAME_EN": "Alania",
+				"NAME_P_RU": null,
+				"ID": 2000
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 43.68649, 42.88012 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Югыд ва",
+				"NAME_EN": "Yugyd-Va",
+				"NAME_P_RU": null,
+				"ID": 2043
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 59.36979, 64.65691 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Башкирия",
+				"NAME_EN": "Bashkiria",
+				"NAME_P_RU": null,
+				"ID": 2003
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 56.7097, 53.02141 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Водлозерский",
+				"NAME_EN": "Vodlozersky",
+				"NAME_P_RU": null,
+				"ID": 2006
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 36.84519, 62.86906 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Нечкинский",
+				"NAME_EN": "Nechkinsky",
+				"NAME_P_RU": null,
+				"ID": 2018
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 53.88002, 56.77022 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Шушенский бор",
+				"NAME_EN": "Shushensky Bor",
+				"NAME_P_RU": "Перовское  лесничество",
+				"ID": 2042
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 91.9877, 53.29713 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Шушенский бор",
+				"NAME_EN": "Shushensky Bor",
+				"NAME_P_RU": "Горное лесничество",
+				"ID": 2042
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 91.5051, 52.75309 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Лосиный остров",
+				"NAME_EN": "Losiny Ostrov",
+				"NAME_P_RU": null,
+				"ID": 2014
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 37.82763, 55.86121 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Нижняя Кама",
+				"NAME_EN": "Nizhnyaya Kama",
+				"NAME_P_RU": "Челнинское лесничество",
+				"ID": 2019
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 52.44931, 55.82464 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Нижняя Кама",
+				"NAME_EN": "Nizhnyaya Kama",
+				"NAME_P_RU": "Елабужский пойменный заказник. Участок Елабужский",
+				"ID": 2019
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 52.10094, 55.71376 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Нижняя Кама",
+				"NAME_EN": "Nizhnyaya Kama",
+				"NAME_P_RU": "Елабужское лесничество",
+				"ID": 2019
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 52.23512, 55.7556 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Марий Чодра",
+				"NAME_EN": "Mary-Chodra",
+				"NAME_P_RU": null,
+				"ID": 2015
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 48.44255, 56.1381 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Куршская коса",
+				"NAME_EN": "Kurshskaya Kosa",
+				"NAME_P_RU": null,
+				"ID": 2013
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 20.78721, 55.13399 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Угра",
+				"NAME_EN": "Ugra",
+				"NAME_P_RU": "Воротынский участок",
+				"ID": 2037
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 36.06133, 54.41065 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Угра",
+				"NAME_EN": "Ugra",
+				"NAME_P_RU": "Угорский участок",
+				"ID": 2037
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 35.36712, 54.76269 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Хвалынский",
+				"NAME_EN": "Khvalynsky",
+				"NAME_P_RU": null,
+				"ID": 2039
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 47.93193, 52.46656 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Забайкальский",
+				"NAME_EN": "Zabaikalsky",
+				"NAME_P_RU": "Ушканьи острова",
+				"ID": 2007
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 108.63493, 53.85124 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Прибайкальский",
+				"NAME_EN": "Pribaikalsky",
+				"NAME_P_RU": null,
+				"ID": 2023
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 105.9965, 52.60324 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Самарская Лука",
+				"NAME_EN": "Samarskaya Luka",
+				"NAME_P_RU": null,
+				"ID": 2030
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 49.6644, 53.29093 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Забайкальский",
+				"NAME_EN": "Zabaikalsky",
+				"NAME_P_RU": null,
+				"ID": 2007
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 109.23109, 53.76058 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Угра",
+				"NAME_EN": "Ugra",
+				"NAME_P_RU": "Жиздринский участок",
+				"ID": 2037
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 35.87632, 54.01913 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Мещерский",
+				"NAME_EN": "Meschersky",
+				"NAME_P_RU": null,
+				"ID": 2017
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 40.16006, 55.10349 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Мещерский",
+				"NAME_EN": "Meschersky",
+				"NAME_P_RU": null,
+				"ID": 2017
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 40.41524, 55.16272 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Сочинский",
+				"NAME_EN": "Sochinsky",
+				"NAME_P_RU": null,
+				"ID": 2034
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 39.80094, 43.76591 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Паанаярви",
+				"NAME_EN": "Paanayarvi",
+				"NAME_P_RU": null,
+				"ID": 2021
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 30.11968, 66.28463 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Калевальский",
+				"NAME_EN": "Kalevalsky",
+				"NAME_P_RU": null,
+				"ID": 2011
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 29.97733, 65.00537 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Анюйский",
+				"NAME_EN": "Anyuisky",
+				"NAME_P_RU": null,
+				"ID": 2002
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 137.09219, 49.1613 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Удэгейская легенда",
+				"NAME_EN": "Udege Legend",
+				"NAME_P_RU": null,
+				"ID": 2038
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 135.47697, 45.76022 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Зов тигра",
+				"NAME_EN": "Zov Tigra",
+				"NAME_P_RU": null,
+				"ID": 2009
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 134.25305, 43.55907 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Бузулукский бор",
+				"NAME_EN": "Buzulukskiy bor",
+				"NAME_P_RU": null,
+				"ID": 2004
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 51.99927, 53.04619 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Сайлюгемский",
+				"NAME_EN": "Sailyugemskiy",
+				"NAME_P_RU": null,
+				"ID": 2029
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 88.9816, 49.50178 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Сайлюгемский",
+				"NAME_EN": "Sailyugemskiy",
+				"NAME_P_RU": null,
+				"ID": 2029
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 88.56095, 49.50356 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Сайлюгемский",
+				"NAME_EN": "Sailyugemskiy",
+				"NAME_P_RU": null,
+				"ID": 2029
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 87.0302, 50.00468 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Русская Арктика",
+				"NAME_EN": "Russkaya Arctica",
+				"NAME_P_RU": null,
+				"ID": 2027
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 67.04062, 76.619 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"NAME_RU": "Завидово",
+				"NAME_EN": "Zavidovo",
+				"NAME_P_RU": null,
+				"ID": 2008
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [ 36.13472, 56.42188 ]
+			}
+		}
+	]
+}

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Ecotourism.Models.GeoPoints>
+@{
 	ViewBag.Title = "Карта";
 	@Styles.Render("~/Content/map");
 }
@@ -29,27 +30,40 @@
 
 
 
-		osmPlugin.init();
-		osmPluginTools.onPointCreated.add(function (e) {
-			console.log('[PointCreated]: lon: ' + e.lon + ', lat: ' + e.lat);
-		});
+	osmPlugin.init();
+	osmPluginTools.onPointCreated.add(function (e) {
+		console.log('[PointCreated]: lon: ' + e.lon + ', lat: ' + e.lat);
+	});
 
-		//$.getJSON('testConfig.json', function (data) {
-		//	let points = data.points;
-		//	for (let i = 0; i < points.length; i++) {
-		//		osmPlugin.addPoint(points[i].lon, points[i].lat, null, points[i]);
-		//	}
-		//});
-		$.getJSON('/Content/json/testConfig2.json', function (data) {
-			let points = data.features;
-			var source = new proj4.Proj('EPSG:4326');
-			var dest = new proj4.Proj('EPSG:3785');
-			for (let i = 0; i < points.length; i++) {
-				let p = proj4.toPoint(points[i].geometry.coordinates);
-				//console.log(p);
-				p = proj4.transform(source, dest, p);
-				osmPlugin.addPoint(p.x, p.y, null, points[i]);
+	//$.getJSON('testConfig.json', function (data) {
+	//	let points = data.points;
+	//	for (let i = 0; i < points.length; i++) {
+	//		osmPlugin.addPoint(points[i].lon, points[i].lat, null, points[i]);
+	//	}
+	//});
+	var source = new proj4.Proj('EPSG:4326');
+	var dest = new proj4.Proj('EPSG:3785');
+	//$.getJSON('/Content/json/testConfig2.json', function (data) {
+	//	let points = data.features;
+	//	for (let i = 0; i < points.length; i++) {
+	//		let p = proj4.toPoint(points[i].geometry.coordinates);
+	//		//console.log(p);
+	//		p = proj4.transform(source, dest, p);
+	//		osmPlugin.addPoint(p.x, p.y, null, points[i]);
+	//	}
+	//});
+	let points = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+	for (var i = 0; i < points.length; i++) {
+		let p = proj4.toPoint([points[i].Lon, points[i].Lat]);
+		p = proj4.transform(source, dest, p);
+		osmPlugin.addPoint(p.x, p.y, null, {
+			properties: {
+				"NAME_RU": points[i].Name,
+				"NAME_EN": points[i].ImagePath,
+				"DESCRIPTION": points[i].Description,
+				"NAME_P_RU": null,
+				"ID": points[i].Id
 			}
 		});
-
+	}
 </script>

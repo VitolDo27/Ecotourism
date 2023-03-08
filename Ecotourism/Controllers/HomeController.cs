@@ -10,11 +10,7 @@ namespace Ecotourism.Controllers
     public class HomeController : Controller
     {
         private readonly Entities _dbContext = new Entities();
-
-        //public HomeController(Entities dbContext)
-        //{
-        //    _dbContext = dbContext;
-        //}
+        
 
         public ActionResult Index()
         {
@@ -22,7 +18,7 @@ namespace Ecotourism.Controllers
         }
         public ActionResult AddPoint()
         {
-            return View();
+            return View(_dbContext.GeoPoints.ToList());
         }
         public ActionResult ViewPoints()
         {
@@ -34,7 +30,7 @@ namespace Ecotourism.Controllers
         }
         public ActionResult Map()
         {
-            return View();
+            return View(_dbContext.GeoPoints.ToList());
         }
         public ActionResult Center()
         {
@@ -48,9 +44,9 @@ namespace Ecotourism.Controllers
         {
             return View();
         }
-        public ActionResult Point()
+        public ActionResult Point(int id)
         {
-            return View();
+            return View(_dbContext.GeoPoints.Where(p => p.Id == id).FirstOrDefault());
         }
         public ActionResult PointNorthKavkaz()
         {
